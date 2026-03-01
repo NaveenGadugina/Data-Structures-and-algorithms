@@ -1,6 +1,8 @@
+// Doubly Linked List Using C 
 #include<stdio.h>
 #include<stdlib.h>
 
+//Creating a Node Structure
 struct node {
     int data;
     struct node *next;
@@ -10,18 +12,21 @@ struct node *start;
 
 void printll();
 
+//Insertion of new node in the beginning of the linked list 
 void ins_beg(){
     int data;
     struct node *new_node=(struct node*)malloc (sizeof(struct node));
     printf("Enter the data of the new node\n");
     scanf("%d",&new_node->data);
-    new_node->prev= NULL;
+    new_node->prev= NULL; 
     new_node->next= start;
     start=new_node;
 
     printll();
 }
 
+
+//Insertion of new node in the beginning of the linked list 
 void ins_end(){
     struct node *new_node=(struct node*)malloc(sizeof(struct node));
     struct node *ptr;
@@ -38,6 +43,7 @@ void ins_end(){
     printll();
 }
 
+//Insertion of new node after the specified node with specified value
 void ins_aft(){
     struct node* new_node=(struct node*)malloc(sizeof(struct node));
     struct node*ptr;
@@ -59,6 +65,8 @@ void ins_aft(){
 
 }
 
+
+//Insertion of new node before the specified node with specified value
 void ins_bef(){
     struct node* new_node=(struct node*)malloc(sizeof(struct node));
     struct node *ptr;
@@ -78,6 +86,7 @@ void ins_bef(){
     printll();
 }
 
+//Deleting the node from the beginning of the linked list 
 void del_beg(){
     if(start==NULL){
         printf("The list is emtpy");
@@ -91,6 +100,7 @@ void del_beg(){
     free(ptr);
 }
 
+//Deleting the node from the end of the linked list 
 void del_end(){
     if(start==NULL){
         printf("The list is emtpy");
@@ -105,6 +115,7 @@ void del_end(){
     free(ptr);
 }
 
+//Deleting the node of specified value 
 void del_mid(){
     if(start==NULL){
         printf("The list is emtpy");
@@ -137,10 +148,11 @@ void printll(){
 }
 
 
+//Main function 
 int main()
 {
     int opt;
-    while (opt!=9)
+    while (opt!=9) //Loop for selecting the operation to be performed 
     {
         printf("---------Operations on Linked list---------\n");
         printf("1. Insertion in the beginning\n");
