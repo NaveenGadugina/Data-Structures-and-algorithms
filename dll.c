@@ -26,7 +26,7 @@ void ins_beg(){
 }
 
 
-//Insertion of new node in the beginning of the linked list 
+//Insertion of new node at the end of the linked list 
 void ins_end(){
     struct node *new_node=(struct node*)malloc(sizeof(struct node));
     struct node *ptr;
@@ -152,7 +152,8 @@ void printll(){
 int main()
 {
     int opt;
-    while (opt!=9) //Loop for selecting the operation to be performed 
+    //Loop for performing different operations continuosly until you user wish to exit
+    while (opt!=9) 
     {
         printf("---------Operations on Linked list---------\n");
         printf("1. Insertion in the beginning\n");
@@ -167,7 +168,7 @@ int main()
 
         printf("Select the operation to be performed\n");
         scanf("%d", &opt);
-
+        //switch case  for selecting the operation to be performed 
         switch (opt)
         {
         case 1:
