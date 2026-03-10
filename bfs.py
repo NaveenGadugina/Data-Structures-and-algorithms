@@ -30,3 +30,21 @@ Node3.children = [Node6]                 # Define children of Node3
 
 print("BFS Traversal of the tree:")
 bfs(Node1)                               # Call BFS starting from root
+
+def search(root, target):
+    if not root:
+        return False
+    queue = deque([root])
+    while queue:
+        current_node = queue.popleft()
+        if current_node.value == target:
+            return True
+        for child in current_node.children:
+            queue.append(child)
+    return False
+
+target = "E"
+if search(A, target):
+    print(f"\n'{target}' found in th tree.")
+else:
+    print(f"\n'{target}' not found in the tree.")
